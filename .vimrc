@@ -11,6 +11,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'romainl/apprentice'
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
 set number
@@ -31,3 +32,5 @@ let g:seoul256_background = 234
 colorscheme reykjavik
 set t_Co=256
 hi Visual cterm=reverse
+
+nnoremap <leader>t :call fzf#vim#files(FindRootDirectory())<cr>
