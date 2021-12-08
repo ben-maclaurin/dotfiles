@@ -50,3 +50,5 @@
 ;(unpin! t)
 
 (package! inkpot-theme)
+(package! kaolin-themes)
+(package! modus-themes)
