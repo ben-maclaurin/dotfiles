@@ -33,6 +33,13 @@ set shiftwidth=2
 set autoindent
 set smartindent
 
+" hide status bar
+let s:hidden_all = 1
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
+
 " neovim treesitter lua
 lua << EOF
 require'nvim-treesitter.configs'.setup {
