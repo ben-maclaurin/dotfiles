@@ -23,7 +23,13 @@ inoremap jk <ESC>
 nnoremap 1 A <ESC>p
 
 " better mapping for markers
-nnoremap ' `
+nnoremap ' ` 
+
+" easily yank text to system clipboard
+vnoremap 2 "+y<ESC> 
+
+" enable hash key
+inoremap <M-#> #
 
 " no bold fonts
 set t_md=
