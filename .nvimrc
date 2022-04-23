@@ -25,7 +25,7 @@ nnoremap 1 A <ESC>p
 " better mapping for markers
 nnoremap ' ` 
 
-" easily yank text to system clipboard
+" easily yank selection to system clipboard
 vnoremap 2 "+y<ESC> 
 
 " enable hash key
