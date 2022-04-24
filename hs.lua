@@ -50,23 +50,21 @@ hs.hotkey.bind({"cmd", "shift"}, "Return", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
-  local max = screen:frame()contiguous 
+  local max = screen:frame()
 
   f.x = max.x 
   f.y = max.y
   f.w = max.w
-  f.h = max.h contiguous 
+  f.h = max.h 
   win:setFrame(f)
 end)
 
-watchMouseButtons = hs.eventtap.new({ hs.eventtap.event.types.otherMouseDown }, function(e)
+-- Deathadder compatibility with WebKit browsers
+
+overrideOtherMouseDown = hs.eventtap.new({ hs.eventtap.event.types.otherMouseDown }, function(e)
     local mouseButton = e:getProperty(hs.eventtap.event.properties['mouseEventButtonNumber'])
 
-    if mouseButton == 4 then
-      hs.eventtap.keyStroke("cmd", "]")
-    elseif mouseButton == 3 then
-      hs.eventtap.keyStroke("cmd", "[")
-     elseif mouseButton == 2 then
+    if mouseButton == 2 then
       local win = hs.window.focusedWindow()
       local f = win:frame()
       local screen = win:screen()
@@ -81,4 +79,4 @@ watchMouseButtons = hs.eventtap.new({ hs.eventtap.event.types.otherMouseDown }, 
 
 end)
 
-watchMouseButtons:start()
+overrideOtherMouseDown:start()
