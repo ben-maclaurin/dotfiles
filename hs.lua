@@ -59,7 +59,7 @@ hs.hotkey.bind({"cmd", "shift"}, "Return", function()
   win:setFrame(f)
 end)
 
--- Deathadder compatibility with WebKit browsers
+-- Middle mouse button  
 
 overrideOtherMouseDown = hs.eventtap.new({ hs.eventtap.event.types.otherMouseDown }, function(e)
     local mouseButton = e:getProperty(hs.eventtap.event.properties['mouseEventButtonNumber'])
