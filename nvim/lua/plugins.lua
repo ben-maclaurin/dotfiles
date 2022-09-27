@@ -1,6 +1,45 @@
 require("utils")
 
 return require("packer").startup(function(use)
+		 use({
+			 "nvim-treesitter/nvim-treesitter",
+			 config = function()
+				 require'nvim-treesitter.configs'.setup {
+					highlight = {
+						enable = true,
+						-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+						-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+						-- Using this option may slow down your editor, and you may see some duplicate highlights.
+						-- Instead of true it can also be a list of languages
+						additional_vim_regex_highlighting = false,
+					},
+			}
+			 end,
+		 })
+
+		 use({
+				"prettier/vim-prettier",
+				setup = function()
+					vim.cmd [[
+					let g:prettier#config#print_width = 'auto'
+let g:prettier#config#tab_width = 2
+let g:prettier#config#use_tabs = 'false'
+let g:prettier#config#parser = ''
+let g:prettier#config#config_precedence = 'file-override'
+let g:prettier#config#prose_wrap = 'preserve'
+let g:prettier#config#html_whitespace_sensitivity = 'css'
+let g:prettier#config#require_pragma = 'false'
+let g:prettier#config#end_of_line = get(g:, 'prettier#config#end_of_line', 'lf')
+					]]
+				end,
+		}) 
+
+	use({
+		"TimUntersberger/neogit",
+		config = function()
+			require("plugins.neogit")
+		end,
+	})
 
 	use({
 		"williamboman/mason.nvim",
@@ -16,21 +55,12 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use({
-		"mhartington/formatter.nvim",
-		config = function()
-			require("plugins.formatter")
-		end,
-	})
-
 	use("justinmk/vim-sneak")
 
 	use({
 		"ahmedkhalf/project.nvim",
 		config = function()
-			require("project_nvim").setup({
-				require("telescope").load_extension("projects"),
-			})
+			require("plugins.project")
 		end,
 	})
 
@@ -54,14 +84,6 @@ return require("packer").startup(function(use)
 		"RRethy/vim-illuminate",
 	})
 
-	use({
-		"akinsho/toggleterm.nvim",
-		tag = "*",
-		config = function()
-			require("plugins.toggleterm")
-		end,
-	})
-
 	use("wbthomason/packer.nvim")
 
 	use({
@@ -83,8 +105,6 @@ return require("packer").startup(function(use)
 			require("plugins.telescope")
 		end,
 	})
-
-	use({ "prettier/vim-prettier", run = "yarn install --frozen-lockfile --production" })
 
 	use("tpope/vim-commentary")
 

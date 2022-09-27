@@ -5,7 +5,7 @@ vim.cmd [[ set nowrap! ]]
 -- Color
 option("syntax", "on")
 option("termguicolors", true)
-vim.cmd [[ colorscheme kanagawa ]]
+vim.cmd [[ colorscheme tokyonight-night ]]
 
 -- Line numbers
 option("relativenumber", true)
@@ -19,3 +19,5 @@ option("smartindent", true)
 option("tabstop", 2)
 option("softtabstop", 2)
 option("smarttab", true)
+
+option("mouse", "a")

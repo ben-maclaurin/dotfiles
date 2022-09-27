@@ -2,21 +2,22 @@ require("utils")
 
 require("lspconfig").rust_analyzer.setup({})
 require("lspconfig").tsserver.setup({})
+require("lspconfig").luau_lsp.setup({})
+
 
 local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<leader>ld', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<leader>ln', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<leader>lf', vim.lsp.buf.formatting, bufopts)
+  keymapb('n', 'gD', vim.lsp.buf.declaration, bufnr)
+  keymapb('n', 'gd', vim.lsp.buf.definition, bufnr)
+  keymapb('n', 'K', vim.lsp.buf.hover, bufnr)
+  keymapb('n', 'gi', vim.lsp.buf.implementation, bufnr)
+  keymapb('n', '<C-k>', vim.lsp.buf.signature_help, bufnr)
+  keymapb('n', '<leader>ld', vim.lsp.buf.type_definition, bufnr)
+  keymapb('n', '<leader>ln', vim.lsp.buf.rename, bufnr)
+  keymapb('n', '<leader>la', vim.lsp.buf.code_action, bufnr)
+  keymapb('n', 'gr', vim.lsp.buf.references, bufnr)
+  keymapb('n', '<leader>lf', vim.lsp.buf.formatting, bufnr)
 end
 
 local lsp_flags = {
@@ -24,6 +25,11 @@ local lsp_flags = {
 }
 
 require('lspconfig')['tsserver'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+require('lspconfig')['luau_lsp'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
