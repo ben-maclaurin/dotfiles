@@ -19,3 +19,5 @@ option("smartindent", true)
 option("tabstop", 2)
 option("softtabstop", 2)
 option("smarttab", true)
+
+option("mouse", "a")

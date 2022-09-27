@@ -4,8 +4,7 @@ return require("packer").startup(function(use)
 	use({
 		"TimUntersberger/neogit",
 		config = function()
-			local neogit = require('neogit')
-			neogit.setup{}
+			require("plugins.neogit")
 		end,
 	})
 
@@ -20,13 +19,6 @@ return require("packer").startup(function(use)
 		"neovim/nvim-lspconfig",
 		config = function()
 			require("plugins.nvim-lspconfig")
-		end,
-	})
-
-	use({
-		"mhartington/formatter.nvim",
-		config = function()
-			require("plugins.formatter")
 		end,
 	})
 
