@@ -12,9 +12,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Smooth scroll
-keymap("", "j", "jzz")
-keymap("", "k", "kzz")
-
 keymap("", "{", "{zz")
 keymap("", "}", "}zz")
 
