@@ -19,8 +19,19 @@ vim.cmd([[
 ]])
 
 return require("packer").startup(function(use)
-	
-	use 'neovim/nvim-lspconfig'
+	use({
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
+	})
+
+	use({
+		"neovim/nvim-lspconfig",
+		config = function()
+			require("plugins.nvim-lspconfig")
+		end,
+	})
 
 	use({
 		"mhartington/formatter.nvim",
@@ -75,7 +86,7 @@ return require("packer").startup(function(use)
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = {
-			"kyazdani42/nvim-web-devicons", 
+			"kyazdani42/nvim-web-devicons",
 		},
 		tag = "nightly",
 		config = function()
@@ -83,13 +94,13 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-		config = function()
-			require("plugins.nvim-treesitter")
-		end,
-	})
+	-- use({
+	-- 	"nvim-treesitter/nvim-treesitter",
+	-- 	run = ":TSUpdate",
+	-- 	config = function()
+	-- 		require("plugins.nvim-treesitter")
+	-- 	end,
+	-- })
 
 	use("nvim-lua/plenary.nvim")
 
