@@ -34,6 +34,6 @@ colors:
 font:
   size: 16
   normal:
-    family: MesloLGSDZ NFM 
+    family: JetBrainsMonoNL NFM 
 window:
   decorations: buttonless
