@@ -1,6 +1,4 @@
-function keymap(mode, lhs, rhs)
-	vim.api.nvim_set_keymap(mode, lhs, rhs, { noremap = true, silent = true })
-end
+require("utils")
 
 keymap("i", "jk", "<ESC>")
 keymap("i", "<M-#>", "#")

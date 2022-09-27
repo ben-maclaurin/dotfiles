@@ -16,17 +16,15 @@ require("tabby.tabline").use_preset("active_wins_at_tail", {
 })
 
 require("tabby").setup({})
+require("utils")
 
-local options = { noremap = true, silent = true }
-local key = vim.api.nvim_set_keymap
+keymap("n", "<leader>to", ":$tabnew<CR>")
+keymap("n", "<leader>tn", ":tabn<CR>")
+keymap("n", "<leader>tp", ":tabp<CR>")
+keymap("n", "<leader>tq", ":tabclose<CR>")
+keymap("n", "<leader>tmp", ":-tabmove<CR>")
+keymap("n", "<leader>tmn", ":+tabmove<CR>")
 
-key("n", "<leader>to", ":$tabnew<CR>", options)
-key("n", "<leader>tn", ":tabn<CR>", options)
-key("n", "<leader>tp", ":tabp<CR>", options)
-key("n", "<leader>tq", ":tabclose<CR>", options)
-key("n", "<leader>tmp", ":-tabmove<CR>", options)
-key("n", "<leader>tmn", ":+tabmove<CR>", options)
-
-key("n", "<leader>bn", ":bnext<CR>", options)
-key("n", "<leader>bp", ":bprevious<CR>", options)
-key("n", "<leader>bq", ":bclose<CR>", options)
+keymap("n", "<leader>bn", ":bnext<CR>")
+keymap("n", "<leader>bp", ":bprevious<CR>")
+keymap("n", "<leader>bq", ":bclose<CR>")

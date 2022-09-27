@@ -1,6 +1,4 @@
-function option(name, value)
-	vim.api.nvim_set_option(name, value)
-end
+require("utils")
 
 vim.cmd [[ set nowrap! ]]
 
