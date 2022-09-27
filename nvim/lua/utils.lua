@@ -2,6 +2,10 @@ function keymap(mode, lhs, rhs)
 	vim.api.nvim_set_keymap(mode, lhs, rhs, { noremap = true, silent = true })
 end
 
+function keymapb(mode, lhs, rhs, bufnr)
+	vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true, buffer=bufnr })
+end
+
 function option(name, value)
 	vim.api.nvim_set_option(name, value)
 end
