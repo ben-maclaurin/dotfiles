@@ -51,14 +51,6 @@ return require("packer").startup(function(use)
 		"RRethy/vim-illuminate",
 	})
 
-	use({
-		"akinsho/toggleterm.nvim",
-		tag = "*",
-		config = function()
-			require("plugins.toggleterm")
-		end,
-	})
-
 	use("wbthomason/packer.nvim")
 
 	use({
