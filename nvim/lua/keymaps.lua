@@ -11,9 +11,16 @@ keymap("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Smooth scroll
+keymap("", "j", "jzz")
+keymap("", "k", "kzz")
+
+keymap("", "{", "{zz")
+keymap("", "}", "}zz")
+
 -- Page navigation [ Ctrl ]
-keymap("n", "<C-j>", "<PageDown>")
-keymap("n", "<C-k>", "<PageUp>")
+keymap("n", "<C-j>", "<PageDown>zz")
+keymap("n", "<C-k>", "<PageUp>zz")
 
 -- Neovim [ V ]
 keymap("n", "<leader>vv", ":e ~/dotfiles/nvim<CR>")
