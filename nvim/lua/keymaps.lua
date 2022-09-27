@@ -32,6 +32,8 @@ keymap("n", "<leader>p", ":Prettier<CR>")
 -- Window [ W ]
 keymap("n", "<leader>wl", "<C-w>l")
 keymap("n", "<leader>wh", "<C-w>h")
+keymap("n", "<leader>wj", "<C-w>j")
+keymap("n", "<leader>wk", "<C-w>k")
 keymap("n", "<leader>wv", ":vs<CR>")
 keymap("n", "<leader>wq", ":exit<CR>")
 keymap("n", "<leader>q", ":qa!<CR>")
