@@ -1,6 +1,13 @@
 require("utils")
 
 return require("packer").startup(function(use)
+	use({
+		"TimUntersberger/neogit",
+		config = function()
+			local neogit = require('neogit')
+			neogit.setup{}
+		end,
+	})
 
 	use({
 		"williamboman/mason.nvim",
@@ -28,9 +35,7 @@ return require("packer").startup(function(use)
 	use({
 		"ahmedkhalf/project.nvim",
 		config = function()
-			require("project_nvim").setup({
-				require("telescope").load_extension("projects"),
-			})
+			require("plugins.project")
 		end,
 	})
 
