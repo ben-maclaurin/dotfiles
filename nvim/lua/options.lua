@@ -2,17 +2,23 @@ require("utils")
 
 vim.cmd [[ set nowrap! ]]
 
--- Color
+--
+--- Color
+
 option("syntax", "on")
 option("termguicolors", true)
-vim.cmd [[ colorscheme tokyonight-night ]]
+vim.cmd [[ colorscheme kanagawa ]]
 
--- Line numbers
+--
+--- Line numbers
+
 option("relativenumber", true)
 option("rnu", true)
-option ("number", true)
+option("number", true)
 
--- Indentation
+--
+--- Indentation
+
 option("shiftwidth", 2)
 option("autoindent", true)
 option("smartindent", true)
@@ -21,3 +27,11 @@ option("softtabstop", 2)
 option("smarttab", true)
 
 option("mouse", "a")
+
+vim.cmd [[
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
+augroup END
+]]
+
