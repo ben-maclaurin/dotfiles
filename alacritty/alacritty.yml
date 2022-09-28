@@ -1,34 +1,36 @@
-# Nightfox Alacritty Colors
-# Style: terafox
-# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/terafox/nightfox_alacritty.yml
+# Kanagawa Alacritty Colors
 colors:
-  # Default colors
   primary:
-    background: '0x152528'
-    foreground: '0xe6eaea'
-  # Normal colors
+    background: '0x1f1f28'
+    foreground: '0xdcd7ba'
+
   normal:
-    black:   '0x2f3239'
-    red:     '0xe85c51'
-    green:   '0x7aa4a1'
-    yellow:  '0xfda47f'
-    blue:    '0x5a93aa'
-    magenta: '0xad5c7c'
-    cyan:    '0xa1cdd8'
-    white:   '0xebebeb'
-  # Bright colors
+    black:   '0x090618'
+    red:     '0xc34043'
+    green:   '0x76946a'
+    yellow:  '0xc0a36e'
+    blue:    '0x7e9cd8'
+    magenta: '0x957fb8'
+    cyan:    '0x6a9589'
+    white:   '0xc8c093'
+
   bright:
-    black:   '0x4e5157'
-    red:     '0xeb746b'
-    green:   '0x8eb2af'
-    yellow:  '0xfdb292'
-    blue:    '0x73a3b7'
-    magenta: '0xb97490'
-    cyan:    '0xafd4de'
-    white:   '0xeeeeee'
+    black:   '0x727169'
+    red:     '0xe82424'
+    green:   '0x98bb6c'
+    yellow:  '0xe6c384'
+    blue:    '0x7fb4ca'
+    magenta: '0x938aa9'
+    cyan:    '0x7aa89f'
+    white:   '0xdcd7ba'
+
+  selection:
+    background: '0x2d4f67'
+    foreground: '0xc8c093'
+
   indexed_colors:
-    - { index: 16, color: '0xff8349' }
-    - { index: 17, color: '0xcb7985' }
+    - { index: 16, color: '0xffa066' }
+    - { index: 17, color: '0xff5d62' }
 font:
   size: 16
   normal:
