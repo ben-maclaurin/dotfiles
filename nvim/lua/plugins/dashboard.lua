@@ -38,14 +38,13 @@ dashboard.custom_header = {
 	"                                                                    ",
 	"                             N E O V I M                            ",
 }
-
-dashboard.custom_center = {
-	{
-		icon = "",
-		desc = "Find  File                              ",
-		action = "Telescope find_files find_command=rg,--hidden,--files",
-		shortcut = "SPC f f",
-	},
-}
-
-dashboard.custom_footer = { "" }
+  dashboard.custom_center = {
+      {icon = '  ',
+      desc = 'Find projects                               ',
+      action = 'Telescope projects',
+      shortcut = 'SPC f p'},
+      {icon = '  ',
+      desc = 'Open dotfiles                               ',
+      action = 'e ~/dotfiles',
+      shortcut = 'SPC f d'},
+    }

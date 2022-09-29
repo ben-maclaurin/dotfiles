@@ -1,140 +1,141 @@
 require("utils")
 
 return require("packer").startup(function(use)
-		 use({
-			 "nvim-treesitter/nvim-treesitter",
-			 config = function()
-				 require'nvim-treesitter.configs'.setup {
-					highlight = {
-						enable = true,
-						-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-						-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-						-- Using this option may slow down your editor, and you may see some duplicate highlights.
-						-- Instead of true it can also be a list of languages
-						additional_vim_regex_highlighting = false,
-					},
-			}
-			 end,
-		 })
+    use "L3MON4D3/LuaSnip"
+    use "saadparwaiz1/cmp_luasnip"
 
-		 use({
-				"prettier/vim-prettier",
-				setup = function()
-					vim.cmd [[
-					let g:prettier#config#print_width = 'auto'
-let g:prettier#config#tab_width = 2
-let g:prettier#config#use_tabs = 'false'
-let g:prettier#config#parser = ''
-let g:prettier#config#config_precedence = 'file-override'
-let g:prettier#config#prose_wrap = 'preserve'
-let g:prettier#config#html_whitespace_sensitivity = 'css'
-let g:prettier#config#require_pragma = 'false'
-let g:prettier#config#end_of_line = get(g:, 'prettier#config#end_of_line', 'lf')
-					]]
-				end,
-		}) 
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
 
-	use({
-		"TimUntersberger/neogit",
-		config = function()
-			require("plugins.neogit")
-		end,
-	})
+    use({
+        "hrsh7th/nvim-cmp",
+        config = function()
+					require("plugins.nvim-cmp")
+        end
+    })
 
-	use({
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
-	})
+    use({
+        "catppuccin/nvim",
+        as = "catppuccin",
+        config = function()
+            vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 
-	use({
-		"neovim/nvim-lspconfig",
-		config = function()
-			require("plugins.nvim-lspconfig")
-		end,
-	})
+            require("catppuccin").setup()
 
-	use("justinmk/vim-sneak")
+            vim.cmd [[colorscheme catppuccin]]
+        end
+    })
 
-	use({
-		"ahmedkhalf/project.nvim",
-		config = function()
-			require("plugins.project")
-		end,
-	})
+    use "andrejlevkovitch/vim-lua-format"
 
-	use({
-		"nanozuki/tabby.nvim",
-		config = function()
-			require("plugins.tabby")
-		end,
-	})
+    use({
+        "kylechui/nvim-surround",
+        tag = "*",
+        config = function() require("nvim-surround").setup({}) end
+    })
 
-	use({
-		"echasnovski/mini.nvim",
-		config = function()
-			require("plugins.mini")
-		end,
-	})
+    use {
+        "folke/which-key.nvim",
+        config = function() require("which-key").setup {} end
+    }
 
-	use("folke/tokyonight.nvim")
+    --
+    --- IMPORTANT: .tsx and .jsx rendering very poor without Treesitter!
 
-	use({
-		"RRethy/vim-illuminate",
-	})
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require'nvim-treesitter.configs'.setup {
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = false
+                }
+            }
+        end
+    })
 
-	use("wbthomason/packer.nvim")
+    use({
+        "prettier/vim-prettier",
+        setup = function() require("plugins.prettier") end
+    })
 
-	use({
-		"kyazdani42/nvim-tree.lua",
-		requires = {
-			"kyazdani42/nvim-web-devicons",
-		},
-		tag = "nightly",
-		config = function()
-			require("plugins.nvim-tree")
-		end,
-	})
+    use({
+        "TimUntersberger/neogit",
+        config = function() require("plugins.neogit") end
+    })
 
-	use("nvim-lua/plenary.nvim")
+    use({
+        "williamboman/mason.nvim",
+        config = function() require("mason").setup() end
+    })
 
-	use({
-		"nvim-telescope/telescope.nvim",
-		config = function()
-			require("plugins.telescope")
-		end,
-	})
+    use({
+        "neovim/nvim-lspconfig",
+        config = function() require("plugins.nvim-lspconfig") end
+    })
 
-	use("tpope/vim-commentary")
+    use("justinmk/vim-sneak")
 
-	use("jiangmiao/auto-pairs")
+    use({
+        "ahmedkhalf/project.nvim",
+        config = function() require("plugins.project") end
+    })
 
-	use("kyazdani42/nvim-web-devicons")
+    use({
+        "nanozuki/tabby.nvim",
+        config = function() require("plugins.tabby") end
+    })
 
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-		config = function()
-			require("plugins.lualine")
-		end,
-	})
+    use({
+        "echasnovski/mini.nvim",
+        config = function() require("plugins.mini") end
+    })
 
-	use({
-		"glepnir/dashboard-nvim",
-		config = function()
-			require("plugins.dashboard")
-		end,
-	})
+    use("folke/tokyonight.nvim")
 
-	use({
-		"rebelot/kanagawa.nvim",
-		config = function()
-			require("plugins.kanagawa")
-		end,
-	})
+    use({"RRethy/vim-illuminate"})
 
-	use("lewis6991/gitsigns.nvim")
+    use("wbthomason/packer.nvim")
 
-	use("tpope/vim-fugitive")
+    use({
+        "kyazdani42/nvim-tree.lua",
+        requires = {"kyazdani42/nvim-web-devicons"},
+        tag = "nightly",
+        config = function() require("plugins.nvim-tree") end
+    })
+
+    use("nvim-lua/plenary.nvim")
+
+    use({
+        "nvim-telescope/telescope.nvim",
+        config = function() require("plugins.telescope") end
+    })
+
+    use("tpope/vim-commentary")
+
+    use("jiangmiao/auto-pairs")
+
+    use("kyazdani42/nvim-web-devicons")
+
+    use({
+        "nvim-lualine/lualine.nvim",
+        requires = {"kyazdani42/nvim-web-devicons", opt = true},
+        config = function() require("plugins.lualine") end
+    })
+
+    use({
+        "glepnir/dashboard-nvim",
+        config = function() require("plugins.dashboard") end
+    })
+
+    -- use({
+    --     "rebelot/kanagawa.nvim",
+    --     config = function() require("plugins.kanagawa") end
+    -- })
+
+    use("lewis6991/gitsigns.nvim")
+
+    use("tpope/vim-fugitive")
 end)
