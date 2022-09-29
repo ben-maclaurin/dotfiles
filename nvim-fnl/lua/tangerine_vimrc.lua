@@ -1,3 +1,4 @@
--- :fennel:1664282895
+-- :fennel:1664319037
 require("plugins")
-return require("keymaps")
+require("keymaps")
+return require("options")
