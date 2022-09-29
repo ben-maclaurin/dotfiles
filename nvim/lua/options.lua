@@ -7,7 +7,6 @@ vim.cmd [[ set nowrap! ]]
 
 option("syntax", "on")
 option("termguicolors", true)
-vim.cmd [[ colorscheme kanagawa ]]
 
 --
 --- Line numbers
