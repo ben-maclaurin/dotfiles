@@ -95,8 +95,6 @@ return require("packer").startup(function(use)
 
     use("folke/tokyonight.nvim")
 
-    use({"RRethy/vim-illuminate"})
-
     use("wbthomason/packer.nvim")
 
     use({
