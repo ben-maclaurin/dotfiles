@@ -1,21 +1,6 @@
 require("utils")
 
 return require("packer").startup(function(use)
-		use({
-			"ishan9299/modus-theme-vim",
-			config = function()
-				vim.cmd("colorscheme modus-operandi")
-			end
-		})
-
-		-- use({
-		-- 	"protesilaos/tempus-themes-vim",
-		-- 	config = function()
-		-- 		vim.cmd("let g:tempus_enforce_background_color=1")
-		-- 		vim.cmd("colorscheme tempus_classic")
-		-- 	end
-		-- })
-
     use "L3MON4D3/LuaSnip"
     use "saadparwaiz1/cmp_luasnip"
 
@@ -26,21 +11,7 @@ return require("packer").startup(function(use)
 
     use({
         "hrsh7th/nvim-cmp",
-        config = function()
-					require("plugins.nvim-cmp")
-        end
-    })
-
-    use({
-        "catppuccin/nvim",
-        as = "catppuccin",
-        config = function()
-            vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-
-            -- require("catppuccin").setup()
-
-            -- vim.cmd [[colorscheme catppuccin]]
-        end
+        config = function() require("plugins.nvim-cmp") end
     })
 
     use "andrejlevkovitch/vim-lua-format"

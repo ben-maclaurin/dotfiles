@@ -4,3 +4,4 @@ require("mini.indentscope").setup({
         animation = require("mini.indentscope").gen_animation("none")
     }
 })
+
