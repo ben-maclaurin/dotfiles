@@ -1,29 +1,62 @@
-# TokyoNight Alacritty Colors
-# Theme: modus-operandi
-# Description: Alacritty port of modus-operandi (Modus themes for Emacs)
-# Author: Protesilaos Stavrou, <https://protesilaos.com>
+# Colors (Dracula PRO)
 colors:
+  # Default colors
   primary:
-    background: '#ffffff'
-    foreground: '#000000'
+    background: '0x22212c'
+    foreground: '0xf8f8f2'
+
+    # Bright and dim foreground colors
+    #
+    # The dimmed foreground color is calculated automatically if it is not present.
+    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+    # is `false`, the normal foreground color will be used.
+    #dim_foreground: '0x9a9a9a'
+    #bright_foreground: '0xffffff'
+
+  # Cursor colors
+  #
+  # Colors which should be used to draw the terminal cursor. If these are unset,
+  # the cursor color will be the inverse of the cell color.
+  cursor:
+    text: '0x454158'
+    cursor: '0xf8f8f2'
+
+  # Selection colors
+  #
+  # Colors which should be used to draw the selection area. If selection
+  # background is unset, selection color will be the inverse of the cell colors.
+  # If only text is unset the cell text color will remain the same.
+  selection:
+    text: '0xf8f8f2'
+    background: '0x454158'
+
+  # Normal colors
   normal:
-    black:   '#000000'
-    red:     '#a60000'
-    green:   '#005e00'
-    yellow:  '#813e00'
-    blue:    '#0031a9'
-    magenta: '#721045'
-    cyan:    '#00538b'
-    white:   '#bfbfbf'
+    black:   '0x22212c'
+    red:     '0xff9580'
+    green:   '0x8aff80'
+    yellow:  '0xffff80'
+    blue:    '0x9580ff'
+    magenta: '0xff80bf'
+    cyan:    '0x80ffea'
+    white:   '0xf8f8f2'
+
+  # Bright colors
   bright:
-    black:   '#595959'
-    red:     '#972500'
-    green:   '#315b00'
-    yellow:  '#70480f'
-    blue:    '#2544bb'
-    magenta: '#5317ac'
-    cyan:    '#005a5f'
-    white:   '#ffffff'
+    black:   '0x22212c'
+    red:     '0xffaa99'
+    green:   '0xa2ff99'
+    yellow:  '0xffff99'
+    blue:    '0xaa99ff'
+    magenta: '0xff99cc'
+    cyan:    '0x99ffee'
+    white:   '0xffffff'
+font:
+  size: 16
+  normal:
+    family: JetBrainsMonoNL NFM 
+window:
+  decorations: buttonless
 
 font:
   size: 16

@@ -24,6 +24,9 @@ vim.g.maplocalleader = " "
 keymap("", "{", "{zz")
 keymap("", "}", "}zz")
 
+-- Find cursor
+keymap("n", "<Tab>", "zz")
+
 --  
 --- Page Down/Up
 
@@ -77,6 +80,10 @@ keymap("n", "<leader>ww", ":sp<CR>")
 
 -- Close the currently active window.
 keymap("n", "<leader>wq", ":exit<CR>")
+
+-- Close the currently active window.
+keymap("n", "<leader>w=", ":vertical resize +10<CR>")
+keymap("n", "<leader>w-", ":vertical resize -10<CR>")
 
 -- Quit Neovim.
 keymap("n", "<leader>q", ":qa!<CR>")
