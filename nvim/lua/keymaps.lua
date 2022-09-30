@@ -1,5 +1,8 @@
 require("utils")
 
+-- Escape from terminal
+keymap("t", "jk", "<C-\\><C-n>")
+
 -- Remap j and k keys to escape insert mode.
 keymap("i", "jk", "<ESC>")
 
@@ -68,6 +71,9 @@ keymap("n", "<leader>wk", "<C-w>k")
 
 -- Create a vertical split (50/50).
 keymap("n", "<leader>wv", ":vs<CR>")
+
+-- Create a horizontal split (50/50).
+keymap("n", "<leader>ww", ":sp<CR>")
 
 -- Close the currently active window.
 keymap("n", "<leader>wq", ":exit<CR>")

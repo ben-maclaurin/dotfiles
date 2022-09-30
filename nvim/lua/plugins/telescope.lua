@@ -1,6 +1,10 @@
 require("utils")
 
-defaults = { file_ignore_patterns = { "node_modules" } }
+options = {
+	defaults = { file_ignore_patterns = { "node_modules" } }
+}
+
+require("telescope").setup(options)
 
 keymap("n", "<leader>fu", ":e<CR>")
 keymap("n", "<leader>fs", ":so<CR>")
