@@ -8,6 +8,9 @@ vim.cmd [[ set nowrap! ]]
 option("syntax", "on")
 option("termguicolors", true)
 
+-- Add the following line to Dracula colorscheme for dashboard color (/autoload/dracula_pro.vim):
+-- hi! link DashboardHeader Comment
+
 --
 --- Line numbers
 

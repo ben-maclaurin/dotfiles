@@ -1,6 +1,21 @@
 require("utils")
 
 return require("packer").startup(function(use)
+		use({
+			"lukas-reineke/indent-blankline.nvim",
+			config = function()
+				require("indent_blankline").setup {
+					show_current_context = true,
+					filetype_exclude = { "dashboard" }
+				}
+			end
+		})
+
+    use({
+        "ThePrimeagen/harpoon",
+        config = function() require("plugins.harpoon") end
+    })
+
     use "L3MON4D3/LuaSnip"
     use "saadparwaiz1/cmp_luasnip"
 
@@ -74,13 +89,6 @@ return require("packer").startup(function(use)
         config = function() require("plugins.tabby") end
     })
 
-    use({
-        "echasnovski/mini.nvim",
-        config = function() require("plugins.mini") end
-    })
-
-    use("folke/tokyonight.nvim")
-
     use("wbthomason/packer.nvim")
 
     use({
@@ -99,8 +107,6 @@ return require("packer").startup(function(use)
 
     use("tpope/vim-commentary")
 
-    use("jiangmiao/auto-pairs")
-
     use("kyazdani42/nvim-web-devicons")
 
     use({
@@ -113,13 +119,6 @@ return require("packer").startup(function(use)
         "glepnir/dashboard-nvim",
         config = function() require("plugins.dashboard") end
     })
-
-    -- use({
-    --     "rebelot/kanagawa.nvim",
-    --     config = function() require("plugins.kanagawa") end
-    -- })
-
-    use("lewis6991/gitsigns.nvim")
 
     use("tpope/vim-fugitive")
 end)

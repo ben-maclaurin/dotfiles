@@ -1,6 +1,6 @@
+require("options")
 require("plugins")
 require("keymaps")
-require("options")
 
 vim.cmd[[
 packadd! dracula_pro
