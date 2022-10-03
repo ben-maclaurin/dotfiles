@@ -1,6 +1,13 @@
 require("utils")
 
 return require("packer").startup(function(use)
+		-- use({
+		-- 	"ishan9299/modus-theme-vim",
+		-- 	config = function() 
+		-- 		vim.cmd("colorscheme modus-operandi")
+		-- 	end
+		-- })
+
 		use({
 			"lukas-reineke/indent-blankline.nvim",
 			config = function()

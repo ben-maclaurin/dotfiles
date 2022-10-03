@@ -1,8 +1,10 @@
-local colors = require("kanagawa.color")
+local default_colors = require("kanagawa.colors").setup()
 
-require("kanagawa").setup({
-	statementStyle = { bold = false },
-})
+local overrides = {
+    DashboardHeader = { fg = default_colors.oniViolet, bg = "NONE" },
+}
+
+require'kanagawa'.setup({ overrides = overrides })
 
 vim.cmd("set background=dark")
 vim.cmd("colorscheme kanagawa")

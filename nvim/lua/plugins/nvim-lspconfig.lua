@@ -9,6 +9,8 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
+	vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {noremap = true, silent = true})
+
   keymapb('n', 'gD', vim.lsp.buf.declaration, bufnr)
   keymapb('n', 'gd', vim.lsp.buf.definition, bufnr)
   keymapb('n', 'K', vim.lsp.buf.hover, bufnr)

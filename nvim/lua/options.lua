@@ -2,6 +2,8 @@ require("utils")
 
 vim.cmd [[ set nowrap! ]]
 
+vim.o.ch = 0
+
 --
 --- Color
 
