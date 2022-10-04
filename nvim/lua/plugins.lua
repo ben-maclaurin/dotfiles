@@ -2,15 +2,21 @@ require("utils")
 
 return require("packer").startup(function(use)
     use({
-        "ishan9299/modus-theme-vim",
-        -- config = function() vim.cmd("colorscheme modus-operandi") end
+        "nvim-telescope/telescope-file-browser.nvim",
+    })
+
+    use({
+        "folke/tokyonight.nvim",
+        config = function()
+            -- vim.cmd("colorscheme tokyonight-night")
+        end
     })
 
     use({
         "rebelot/kanagawa.nvim",
-        config = function()
-            require("plugins.kanagawa")
-        end
+        config = function() 
+					require("plugins.kanagawa") 
+				end
     })
 
     use({
@@ -18,7 +24,7 @@ return require("packer").startup(function(use)
         config = function()
             require("indent_blankline").setup {
                 show_current_context = true,
-                filetype_exclude = {"dashboard"},
+                filetype_exclude = {"dashboard"}
             }
         end
     })
@@ -83,7 +89,9 @@ return require("packer").startup(function(use)
 
     use({
         "ahmedkhalf/project.nvim",
-        config = function() require("plugins.project") end
+				config = function()
+					require("project_nvim").setup()
+				end
     })
 
     use("wbthomason/packer.nvim")

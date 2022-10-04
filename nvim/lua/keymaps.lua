@@ -45,7 +45,7 @@ keymap("n", "vv", "<S-v>")
 -- 
 --- Dotfile management
 
-keymap("n", "<leader>fd", ":e ~/dotfiles<CR>")
+keymap("n", "<leader>f.", ":e ~/dotfiles/README.md<CR>:Dashboard<CR><cmd>Telescope find_files theme=ivy<CR>")
 
 --
 --- Prettier 
@@ -94,10 +94,23 @@ keymap("n", "<leader>q", ":qa!<CR>")
 keymap("v", "<leader>y", '"+y"')
 
 --
+--- Term
+keymap("n", "<leader>;", ":term<CR>i")
+
+--
 --- System utility
 
 -- Opens the web browser.
 keymap("n", "<leader>ow", ":!open /Applications/Firefox.app<CR><CR>")
 
+-- Opens the Figma.
+keymap("n", "<leader>of", ":!open /Applications/Figma.app<CR><CR>")
+
 -- Slack
 keymap("n", "<leader>os", ":!open /Applications/Slack.app<CR><CR>")
+
+--
+--- Dashboard
+keymap("n", "<leader>d", ":Dashboard<CR>")
+
+
