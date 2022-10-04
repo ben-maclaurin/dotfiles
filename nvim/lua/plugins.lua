@@ -1,22 +1,44 @@
 require("utils")
 
 return require("packer").startup(function(use)
-    use({
-        "nvim-telescope/telescope-file-browser.nvim",
-    })
+    use({"nvim-telescope/telescope-file-browser.nvim"})
 
     use({
-        "folke/tokyonight.nvim",
+        "fgheng/winbar.nvim",
         config = function()
-            -- vim.cmd("colorscheme tokyonight-night")
+            require('winbar').setup({
+                enabled = true,
+
+                show_file_path = true,
+                show_symbols = true,
+
+                colors = {
+                    path = '', -- You can customize colors like #c946fd
+                    file_name = '',
+                    symbols = ''
+                },
+
+                icons = {
+                    file_icon_default = '',
+                    seperator = '>',
+                    editor_state = '●',
+                    lock_icon = ''
+                },
+
+                exclude_filetype = {
+                    'help', 'startify', 'dashboard', 'packer', 'neogitstatus',
+                    'NvimTree', 'Trouble', 'alpha', 'lir', 'Outline',
+                    'spectre_panel', 'toggleterm', 'qf'
+                }
+            })
         end
     })
 
+    use 'ggandor/lightspeed.nvim'
+
     use({
-        "rebelot/kanagawa.nvim",
-        config = function() 
-					require("plugins.kanagawa") 
-				end
+        "EdenEast/nightfox.nvim",
+        config = function() vim.cmd("colorscheme carbonfox") end
     })
 
     use({
@@ -57,7 +79,6 @@ return require("packer").startup(function(use)
 
     --
     --- IMPORTANT: .tsx and .jsx rendering very poor without Treesitter!
-
     use({
         "nvim-treesitter/nvim-treesitter",
         config = function()
@@ -69,6 +90,13 @@ return require("packer").startup(function(use)
             }
         end
     })
+
+		use({
+			"nvim-treesitter/nvim-treesitter-context",
+			config = function()
+				require'treesitter-context'.setup{}
+			end
+		})
 
     use({
         "prettier/vim-prettier",
@@ -85,13 +113,9 @@ return require("packer").startup(function(use)
         config = function() require("plugins.nvim-lspconfig") end
     })
 
-    use("justinmk/vim-sneak")
-
     use({
         "ahmedkhalf/project.nvim",
-				config = function()
-					require("project_nvim").setup()
-				end
+        config = function() require("project_nvim").setup() end
     })
 
     use("wbthomason/packer.nvim")

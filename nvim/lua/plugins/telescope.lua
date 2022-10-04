@@ -18,7 +18,6 @@ require("telescope").setup(options)
 require("telescope").load_extension "file_browser"
 require("telescope").load_extension "projects"
 
-
 --
 --- Strings
 keymap("n", "<leader>fs", ":lua require'telescope.builtin'.live_grep(require('telescope.themes').get_ivy({}))<CR>")
