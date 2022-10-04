@@ -2,10 +2,15 @@ require("utils")
 
 return require("packer").startup(function(use)
     use({
+        "ishan9299/modus-theme-vim",
+        config = function() vim.cmd("colorscheme modus-operandi") end
+    })
+
+    use({
         "rebelot/kanagawa.nvim",
-				config = function()
-					require("plugins.kanagawa")
-				end
+        config = function()
+            -- require("plugins.kanagawa")
+        end
     })
 
     use({
@@ -89,11 +94,6 @@ return require("packer").startup(function(use)
     use({
         "ahmedkhalf/project.nvim",
         config = function() require("plugins.project") end
-    })
-
-    use({
-        "nanozuki/tabby.nvim",
-        config = function() require("plugins.tabby") end
     })
 
     use("wbthomason/packer.nvim")

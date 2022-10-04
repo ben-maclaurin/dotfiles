@@ -2,16 +2,25 @@ require("utils")
 
 vim.cmd [[ set nowrap! ]]
 
+-- This hides the command line for a cleaner look and feel. 
 vim.o.ch = 0
+
+--
+--- Neovide
+
+-- The following are Neovide-sepcific options. 
+vim.cmd("let g:neovide_transparency=0.9")
+vim.cmd("let g:transparency = 0.9")
+vim.cmd("let g:neovide_background_color = '#1F1F28'.printf('%x', float2nr(255 * g:transparency))")
+
+-- Set the font to JetBrains Mono and size 17.
+vim.opt.guifont = {"JetBrainsMonoNL NFM", ":h17"}
 
 --
 --- Color
 
 option("syntax", "on")
 option("termguicolors", true)
-
--- Add the following line to Dracula colorscheme for dashboard color (/autoload/dracula_pro.vim):
--- hi! link DashboardHeader Comment
 
 --
 --- Line numbers
