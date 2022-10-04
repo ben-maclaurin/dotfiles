@@ -19,7 +19,7 @@ keymap("n", "<leader>gcl", ":lua require'telescope.builtin'.git_commits(require(
 
 keymap("n", "<leader>ga", ":Git add .<CR>")
 keymap("n", "<leader>gcc", ":Git commit -m ")
-keymap("n", "<leader>p", ":Git push<CR>")
+keymap("n", "<leader>gp", ":Git push<CR>")
 
 --
 --- Buffers
