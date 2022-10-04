@@ -3,13 +3,13 @@ require("utils")
 return require("packer").startup(function(use)
     use({
         "ishan9299/modus-theme-vim",
-        config = function() vim.cmd("colorscheme modus-operandi") end
+        -- config = function() vim.cmd("colorscheme modus-operandi") end
     })
 
     use({
         "rebelot/kanagawa.nvim",
         config = function()
-            -- require("plugins.kanagawa")
+            require("plugins.kanagawa")
         end
     })
 
@@ -18,14 +18,9 @@ return require("packer").startup(function(use)
         config = function()
             require("indent_blankline").setup {
                 show_current_context = true,
-                filetype_exclude = {"dashboard"}
+                filetype_exclude = {"dashboard"},
             }
         end
-    })
-
-    use({
-        "ThePrimeagen/harpoon",
-        config = function() require("plugins.harpoon") end
     })
 
     use "L3MON4D3/LuaSnip"
@@ -72,11 +67,6 @@ return require("packer").startup(function(use)
     use({
         "prettier/vim-prettier",
         setup = function() require("plugins.prettier") end
-    })
-
-    use({
-        "TimUntersberger/neogit",
-        config = function() require("plugins.neogit") end
     })
 
     use({

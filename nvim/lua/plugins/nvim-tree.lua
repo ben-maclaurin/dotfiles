@@ -6,6 +6,7 @@ require("nvim-tree").setup({
     update_root = true
   },
 })
+
 require("utils")
 
 keymap("n", "<leader>nf", ":NvimTreeFindFile<CR>")
