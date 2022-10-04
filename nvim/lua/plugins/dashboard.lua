@@ -46,5 +46,5 @@ dashboard.custom_header = {
       {icon = '  ',
       desc = 'Open dotfiles                               ',
       action = 'e ~/dotfiles',
-      shortcut = 'SPC f d'},
+      shortcut = 'SPC f .'},
     }

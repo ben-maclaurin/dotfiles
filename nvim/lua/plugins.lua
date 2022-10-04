@@ -2,9 +2,20 @@ require("utils")
 
 return require("packer").startup(function(use)
     use({
+        "nvim-telescope/telescope-file-browser.nvim",
+    })
+
+    use({
+        "folke/tokyonight.nvim",
+        config = function()
+            -- vim.cmd("colorscheme tokyonight-night")
+        end
+    })
+
+    use({
         "rebelot/kanagawa.nvim",
-				config = function()
-					require("plugins.kanagawa")
+        config = function() 
+					require("plugins.kanagawa") 
 				end
     })
 
@@ -16,11 +27,6 @@ return require("packer").startup(function(use)
                 filetype_exclude = {"dashboard"}
             }
         end
-    })
-
-    use({
-        "ThePrimeagen/harpoon",
-        config = function() require("plugins.harpoon") end
     })
 
     use "L3MON4D3/LuaSnip"
@@ -70,11 +76,6 @@ return require("packer").startup(function(use)
     })
 
     use({
-        "TimUntersberger/neogit",
-        config = function() require("plugins.neogit") end
-    })
-
-    use({
         "williamboman/mason.nvim",
         config = function() require("mason").setup() end
     })
@@ -88,12 +89,9 @@ return require("packer").startup(function(use)
 
     use({
         "ahmedkhalf/project.nvim",
-        config = function() require("plugins.project") end
-    })
-
-    use({
-        "nanozuki/tabby.nvim",
-        config = function() require("plugins.tabby") end
+				config = function()
+					require("project_nvim").setup()
+				end
     })
 
     use("wbthomason/packer.nvim")
