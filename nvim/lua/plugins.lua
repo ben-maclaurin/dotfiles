@@ -38,7 +38,6 @@ return require("packer").startup(function(use)
 
     use({
         "EdenEast/nightfox.nvim",
-        config = function() vim.cmd("colorscheme carbonfox") end
     })
 
     use({
