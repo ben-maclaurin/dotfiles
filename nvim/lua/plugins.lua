@@ -3,6 +3,18 @@ require("utils")
 return require("packer").startup(function(use)
     use({"nvim-telescope/telescope-file-browser.nvim"})
 
+ 		use "rebelot/kanagawa.nvim"
+
+    use({
+        "windwp/nvim-ts-autotag",
+        config = function() require('nvim-ts-autotag').setup() end
+    })
+
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+
     use({
         "fgheng/winbar.nvim",
         config = function()
@@ -35,10 +47,6 @@ return require("packer").startup(function(use)
     })
 
     use 'ggandor/lightspeed.nvim'
-
-    use({
-        "EdenEast/nightfox.nvim",
-    })
 
     use({
         "lukas-reineke/indent-blankline.nvim",
@@ -85,17 +93,16 @@ return require("packer").startup(function(use)
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false
-                }
+                },
+                autotag = {enable = true}
             }
         end
     })
 
-		use({
-			"nvim-treesitter/nvim-treesitter-context",
-			config = function()
-				require'treesitter-context'.setup{}
-			end
-		})
+    use({
+        "nvim-treesitter/nvim-treesitter-context",
+        config = function() require'treesitter-context'.setup {} end
+    })
 
     use({
         "prettier/vim-prettier",
