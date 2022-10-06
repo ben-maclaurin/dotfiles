@@ -3,8 +3,7 @@ require("utils")
 return require("packer").startup(function(use)
     use({"nvim-telescope/telescope-file-browser.nvim"})
 
-		use "sainnhe/gruvbox-material"
-		use 'kvrohit/rasmus.nvim'
+ 		use "rebelot/kanagawa.nvim"
 
     use({
         "windwp/nvim-ts-autotag",
@@ -48,8 +47,6 @@ return require("packer").startup(function(use)
     })
 
     use 'ggandor/lightspeed.nvim'
-
-    use({"EdenEast/nightfox.nvim"})
 
     use({
         "lukas-reineke/indent-blankline.nvim",
