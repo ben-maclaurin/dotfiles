@@ -13,11 +13,13 @@ vim.cmd("set cursorline")
 --- Neovide
 
 -- The following are Neovide-sepcific options. 
-vim.cmd("let g:neovide_transparency=0.99")
+vim.cmd("let g:neovide_transparency=0.995")
 
 -- Set the font to JetBrains Mono and size 17.
--- vim.opt.guifont = {"JetBrainsMonoNL NFM", ":h17"}
-vim.opt.guifont = {"Iosevka", ":h19"}
+vim.opt.guifont = {"MonoLisa Custom", ":h16"}
+-- vim.opt.guifont = {"Iosevka", ":h19"}
+
+-- vim.cmd("let g:neovide_cursor_animation_length=0")
 
 --
 --- Color
@@ -31,6 +33,9 @@ option("termguicolors", true)
 option("relativenumber", true)
 option("rnu", true)
 option("number", true)
+
+-- Hide line numbers in terminal windows
+vim.cmd("autocmd TermOpen * setlocal nonumber norelativenumber")
 
 --
 --- Indentation

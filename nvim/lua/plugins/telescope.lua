@@ -24,7 +24,7 @@ keymap("n", "<leader>fs", ":lua require'telescope.builtin'.live_grep(require('te
 
 --
 --- Search in buffer
-keymap("n", "<leader>e", ":lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_ivy({}))<CR>")
+keymap("n", "/", ":lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_ivy({}))<CR>")
 
 --
 --- Git
