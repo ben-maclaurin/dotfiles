@@ -3,7 +3,9 @@ require("utils")
 return require("packer").startup(function(use)
     use({"nvim-telescope/telescope-file-browser.nvim"})
 
- 		use "rebelot/kanagawa.nvim"
+		use "EdenEast/nightfox.nvim"
+
+    use "rebelot/kanagawa.nvim"
 
     use({
         "windwp/nvim-ts-autotag",
@@ -79,10 +81,10 @@ return require("packer").startup(function(use)
         config = function() require("nvim-surround").setup({}) end
     })
 
-    use {
-        "folke/which-key.nvim",
-        config = function() require("which-key").setup {} end
-    }
+    -- use {
+    --     "folke/which-key.nvim",
+    --     config = function() require("which-key").setup {} end
+    -- }
 
     --
     --- IMPORTANT: .tsx and .jsx rendering very poor without Treesitter!

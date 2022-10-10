@@ -2,5 +2,5 @@ require("options")
 require("plugins")
 require("keymaps")
 
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme terafox")
 

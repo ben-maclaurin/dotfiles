@@ -1,5 +1,9 @@
 require("utils")
 
+-- Disable visual select (training only)
+keymap("n", "v", "<ESC>")
+keymap("n", "<S-v>", "<ESC>")
+
 -- Escape from terminal
 keymap("t", "jk", "<C-\\><C-n>")
 
@@ -86,7 +90,7 @@ keymap("n", "<leader>w=", ":vertical resize +10<CR>")
 keymap("n", "<leader>w-", ":vertical resize -10<CR>")
 
 -- Quit Neovim.
-keymap("n", "<leader>q", ":qa!<CR>")
+-- keymap("n", "<leader>q", ":qa!<CR>")
 
 -- 
 --- System clipboard
@@ -113,4 +117,9 @@ keymap("n", "<leader>os", ":!open /Applications/Slack.app<CR><CR>")
 --- Dashboard
 keymap("n", "<leader>d", ":Dashboard<CR>")
 
+-- 
+--- Buffers
+
+-- Close all buffers except current 
+keymap("n", "<leader>q", ":w <bar> %bd! <bar> e# <bar> bd# <CR><CR>")
 

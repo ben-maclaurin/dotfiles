@@ -13,10 +13,13 @@ vim.cmd("set cursorline")
 --- Neovide
 
 -- The following are Neovide-sepcific options. 
-vim.cmd("let g:neovide_transparency=0.99")
+
+vim.cmd("let g:neovide_transparency = 1")
+vim.cmd("let g:transparency = 1")
+vim.cmd("let g:neovide_background_color = '#152528'.printf('%x', float2nr(255 * g:transparency))")
 
 -- Set the font to JetBrains Mono and size 17.
-vim.opt.guifont = {"MonoLisa Custom", ":h16"}
+vim.opt.guifont = {"JetBrainsMonoNL NFM", ":h17"}
 -- vim.opt.guifont = {"Iosevka", ":h19"}
 
 -- vim.cmd("let g:neovide_cursor_animation_length=0")
