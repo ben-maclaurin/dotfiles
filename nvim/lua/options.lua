@@ -16,7 +16,7 @@ vim.cmd("set cursorline")
 
 vim.cmd("let g:neovide_transparency = 1")
 vim.cmd("let g:transparency = 1")
-vim.cmd("let g:neovide_background_color = '#152528'.printf('%x', float2nr(255 * g:transparency))")
+vim.cmd("let g:neovide_background_color = '#002B36'.printf('%x', float2nr(255 * g:transparency))")
 
 -- Set the font to JetBrains Mono and size 17.
 vim.opt.guifont = {"JetBrainsMonoNL NFM", ":h17"}
