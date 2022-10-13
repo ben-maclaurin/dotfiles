@@ -3,10 +3,10 @@ require("utils")
 return require("packer").startup(function(use)
     use({"nvim-telescope/telescope-file-browser.nvim"})
 
-		use "ishan9299/nvim-solarized-lua"
-		use "RRethy/nvim-base16"
-		use "EdenEast/nightfox.nvim"
+		use "folke/tokyonight.nvim"
 
+		use "ThePrimeagen/git-worktree.nvim"
+		use "sainnhe/gruvbox-material"
     use "rebelot/kanagawa.nvim"
 
     use({

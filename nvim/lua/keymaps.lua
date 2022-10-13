@@ -44,7 +44,7 @@ keymap("n", "<leader>vs", ":PackerSync<CR>")
 keymap("n", "<leader>vi", ":PackerInstall<CR>")
 
 -- Quickly select entire line in visual mode. 
-keymap("n", "vv", "<S-v>")
+-- keymap("n", "vv", "<S-v>")
 
 -- 
 --- Dotfile management
@@ -99,7 +99,7 @@ keymap("v", "<leader>y", '"+y"')
 
 --
 --- Term
-keymap("n", "<leader>;", ":term<CR>i")
+-- keymap("n", "<leader>;", ":term<CR>i")
 
 --
 --- System utility
