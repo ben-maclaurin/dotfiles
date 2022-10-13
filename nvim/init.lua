@@ -2,6 +2,6 @@ require("options")
 require("plugins")
 require("keymaps")
 
-vim.cmd("set background=dark")
-vim.cmd("colorscheme solarized")
+vim.cmd("let g:gruvbox_material_foreground='mix'")
+vim.cmd("colorscheme gruvbox-material")
 

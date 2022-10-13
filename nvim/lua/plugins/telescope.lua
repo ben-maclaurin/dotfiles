@@ -17,6 +17,12 @@ options = {
 require("telescope").setup(options)
 require("telescope").load_extension "file_browser"
 require("telescope").load_extension "projects"
+require("telescope").load_extension "git_worktree"
+
+-- Find worktree
+---
+keymap("n", "<leader>fw", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
+keymap("n", "<leader>gw", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")
 
 --
 --- Strings
