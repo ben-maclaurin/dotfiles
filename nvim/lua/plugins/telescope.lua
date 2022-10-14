@@ -52,7 +52,7 @@ keymap("n", "<leader>h", ":lua require'telescope.builtin'.search_history(require
 
 --
 --- LSP
-keymap("n", "<leader>t", ":lua require'telescope.builtin'.treesitter(require('telescope.themes').get_ivy({}))<CR>")
+-- keymap("n", "<leader>t", ":lua require'telescope.builtin'.treesitter(require('telescope.themes').get_ivy({}))<CR>")
 
 --
 --- Files
