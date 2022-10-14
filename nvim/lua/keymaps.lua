@@ -37,6 +37,8 @@ keymap("n", "<Tab>", "zz")
 keymap("n", "<C-j>", "<PageDown>zz")
 keymap("n", "<C-k>", "<PageUp>zz")
 
+keymap("n", "<C-i>", "<C-i>")
+
 --
 --- Neovim
 
