@@ -3,6 +3,13 @@ require("utils")
 return require("packer").startup(function(use)
     use({"nvim-telescope/telescope-file-browser.nvim"})
 
+		use "glepnir/zephyr-nvim"
+
+    use({
+        'lewis6991/gitsigns.nvim',
+        config = function() require('gitsigns').setup{} end
+    })
+
 		-- Lua
 		use {
 			"folke/trouble.nvim",
@@ -17,13 +24,7 @@ return require("packer").startup(function(use)
         config = function() require('plugins.hydra') end
     })
 
-		use "ishan9299/modus-theme-vim"
-
-    use "folke/tokyonight.nvim"
-
     use "ThePrimeagen/git-worktree.nvim"
-    use "sainnhe/gruvbox-material"
-    use "rebelot/kanagawa.nvim"
 
     use({
         "windwp/nvim-ts-autotag",

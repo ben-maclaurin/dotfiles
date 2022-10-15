@@ -1,0 +1,57 @@
+{
+  "title": "",
+  "rules": [
+    {
+      "description": "",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": {
+              "mandatory": [
+                "left_gui"
+              ]
+            },
+            "key_code": "left_control"
+          },
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "tab",
+              "modifiers": [
+                "left_gui"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": {
+              "mandatory": [
+                "left_gui",
+                "left_shift"
+              ]
+            },
+            "key_code": "left_control"
+          },
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "tab",
+              "modifiers": [
+                "left_gui",
+                "left_shift"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
