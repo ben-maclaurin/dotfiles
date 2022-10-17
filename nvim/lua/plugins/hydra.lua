@@ -1,6 +1,16 @@
 local Hydra = require('hydra')
 
 Hydra({
+	name = 'Cycle buffers',
+  mode = 'n',
+  body = '<leader>b',
+  heads = {
+     { 'j', ':bnext<CR>', { desc = 'Next buffer' } },
+     { 'k', ':bprevious<CR>', { desc = 'Previous buffer' } },
+  }
+})
+
+Hydra({
 	name = 'Increase/Decrease Size',
   mode = 'n',
   body = '<leader>w=',
