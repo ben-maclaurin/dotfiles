@@ -3,21 +3,25 @@ require("utils")
 return require("packer").startup(function(use)
     use({"nvim-telescope/telescope-file-browser.nvim"})
 
-		use "glepnir/zephyr-nvim"
+    use {
+        "anuvyklack/windows.nvim",
+        requires = "anuvyklack/middleclass",
+        config = function() require('windows').setup() end
+    }
+
+    use "glepnir/zephyr-nvim"
 
     use({
         'lewis6991/gitsigns.nvim',
-        config = function() require('gitsigns').setup{} end
+        config = function() require('gitsigns').setup {} end
     })
 
-		-- Lua
-		use {
-			"folke/trouble.nvim",
-			requires = "kyazdani42/nvim-web-devicons",
-			config = function()
-				require("plugins.trouble")
-			end
-		}
+    -- Lua
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function() require("plugins.trouble") end
+    }
 
     use({
         'anuvyklack/hydra.nvim',

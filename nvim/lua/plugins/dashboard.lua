@@ -35,8 +35,8 @@ dashboard.custom_header = {
 	"        :dy+:`      .-::-..NNNhhd+``..`...````.-::-`                ",
 	"                        .-:mNdhh:.......--::::-`                    ",
 	"                           yNh/..------..`                          ",
-	"                                                                    ",
-	"                             N E O V I M                            ",
+  "                                                                    ",
+  "                             N E O V I M                            ",
 }
   dashboard.custom_center = {
       {icon = '  ',

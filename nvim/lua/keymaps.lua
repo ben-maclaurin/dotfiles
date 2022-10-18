@@ -5,7 +5,8 @@ keymap("n", "v", "<ESC>")
 keymap("n", "<S-v>", "<ESC>")
 
 -- Escape from terminal
--- keymap("t", "jk", "<C-\\><C-n>")
+keymap("t", "<Esc>", "<C-\\><C-n>")
+keymap("n", "<leader>;", ":e term<CR>")
 
 -- Remap j and k keys to escape insert mode.
 -- keymap("i", "jk", "<ESC>")
@@ -45,9 +46,6 @@ keymap("n", "<C-i>", "<C-i>")
 keymap("n", "<leader>vs", ":PackerSync<CR>")
 keymap("n", "<leader>vi", ":PackerInstall<CR>")
 
--- Quickly select entire line in visual mode. 
--- keymap("n", "vv", "<S-v>")
-
 -- 
 --- Dotfile management
 
@@ -59,9 +57,6 @@ keymap("n", "<leader>f.", ":e ~/dotfiles/README.md<CR>:Dashboard<CR><cmd>Telesco
 keymap("n", "<leader>p", ":Prettier<CR>")
 
 keymap("n", "'", "`")
-
--- keymap("n", "<S-a>", "$")
--- keymap("n", "<S-i>", "0")
 
 -- 
 --- Window management
@@ -98,10 +93,6 @@ keymap("n", "<leader>w-", ":vertical resize -10<CR>")
 --- System clipboard
 
 keymap("v", "<leader>y", '"+y"')
-
---
---- Term
--- keymap("n", "<leader>;", ":term<CR>i")
 
 --
 --- System utility
