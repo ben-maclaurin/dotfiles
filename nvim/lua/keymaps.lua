@@ -5,11 +5,11 @@ keymap("n", "v", "<ESC>")
 keymap("n", "<S-v>", "<ESC>")
 
 -- Escape from terminal
-keymap("t", "jk", "<C-\\><C-n>")
+keymap("t", "<Esc>", "<C-\\><C-n>")
 keymap("n", "<leader>;", ":e term<CR>")
 
 -- Remap j and k keys to escape insert mode.
-keymap("i", "jk", "<ESC>")
+-- keymap("i", "jk", "<ESC>")
 
 -- Neovim support for hashtags.
 keymap("i", "<M-#>", "#")
